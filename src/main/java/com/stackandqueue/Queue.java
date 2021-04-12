@@ -7,8 +7,16 @@ public class Queue<K> {
         linkedList.append(node);
     }
 
+    public void dequeue() {
+        linkedList.popLast();
+    }
+
     public INode<K> latestKeyOfQueue() {
         return linkedList.head;
+    }
+
+    public INode<K> firstKeyOfQueue() {
+        return linkedList.tail;
     }
 
     public void printQueue() {

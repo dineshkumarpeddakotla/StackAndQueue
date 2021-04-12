@@ -21,4 +21,21 @@ public class TestQueue {
         Assertions.assertEquals( Queue.latestKeyOfQueue(), firstNode);
 
     }
+
+    @Test
+    public void whenDequeuedTailShouldBeMovedBackOneNode() {
+        Node<Integer> firstNode = new Node<>(70);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(56);
+        Queue<Integer> queue = new Queue<>();
+        queue.enqueue(firstNode);
+        queue.enqueue(secondNode);
+        queue.enqueue(thirdNode);
+
+        queue.dequeue();
+
+        queue.printQueue();
+
+        Assertions.assertEquals(queue.firstKeyOfQueue(), secondNode);
+    }
 }
